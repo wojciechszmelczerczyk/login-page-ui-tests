@@ -1,0 +1,20 @@
+{
+  "name": "loginform",
+  "version": "1.0.0",
+  "description": "UI tests of login form",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open"
+  },
+  "keywords": [
+    "cypress",
+    "login",
+    "form",
+    "javascript"
+  ],
+  "author": "Wojciech Szmelczerczyk <szmelczerczykwojciech@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.9.0"
+  }
+}
