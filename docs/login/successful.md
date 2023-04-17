@@ -1,6 +1,11 @@
 # Successful login
 
-## Test Case 1
+## Table of contents:
+
+- [Login](#login)
+- [Logout](#logout)
+
+## Login
 
 ## Description
 
@@ -45,7 +50,7 @@ it("should prompt successful hello message and change button text to Log Out, if
 });
 ```
 
-## Test Case 2
+## Logout
 
 ## Description
 
