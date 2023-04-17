@@ -2,30 +2,43 @@ import * as userCredentials from "../fixtures/credentials.json";
 
 const [correctUser, incorrectUser] = userCredentials;
 
+beforeEach(() => cy.visit("http://uitestingplayground.com/sampleapp"));
+
 describe("Login Form", () => {
-  beforeEach(() => cy.visit("http://uitestingplayground.com/sampleapp"));
-
-  it("should prompt successful hello message and change btn text to Log Out, if provided credentials are correct", () => {
+  describe("Successful login", () => {
     const { username, password } = correctUser;
+    it("should prompt successful hello message and change button text to Log Out, if provided credentials are correct", () => {
+      cy.login(username, password);
 
-    cy.login(username, password);
+      cy.get('label[id="loginstatus"]').should(
+        "have.text",
+        `Welcome, ${username}!`
+      );
 
-    cy.get('label[id="loginstatus"]').should(
-      "have.text",
-      `Welcome, ${username}!`
-    );
+      cy.get('button[id="login"]').should("contain", "Log Out");
+    });
 
-    cy.get('button[id="login"]').should("contain", "Log Out");
+    it("should change button text and clear inputs, after successful log out", () => {
+      cy.login(username, password);
+
+      cy.get('button[id="login"]').click();
+
+      cy.get('button[id="login"]').should("contain", "Log In");
+
+      cy.get("input").should("contain", "");
+    });
   });
 
-  it("should prompt error validation message, if provided credentials are incorrect", () => {
-    const { username, password } = incorrectUser;
+  describe("Unsuccessful login", () => {
+    it("should prompt error validation message, if provided credentials are incorrect", () => {
+      const { username, password } = incorrectUser;
 
-    cy.login(username, password);
+      cy.login(username, password);
 
-    cy.get('label[id="loginstatus"]').should(
-      "have.text",
-      "Invalid username/password"
-    );
+      cy.get('label[id="loginstatus"]').should(
+        "have.text",
+        "Invalid username/password"
+      );
+    });
   });
 });

@@ -1,5 +1,7 @@
 # Successful login
 
+## Test Case 1
+
 ## Description
 
 This test case verifies that a user can successfully log in with valid credentials and
@@ -19,7 +21,8 @@ successful hello message is being prompted and login button text is changed to `
 1. Visit the login page.
 2. Enter valid credentials.
 3. Click the Log In button.
-4. Verify that the successful `Welcome, ${user}!` message is being prompted and login button text is `Log Out`.
+4. Verify that the successful `Welcome, ${user}!` message is being prompted.
+5. Verify that login button text is `Log Out`.
 
 ## Expected result
 
@@ -39,5 +42,48 @@ it("should prompt successful hello message and change button text to Log Out, if
   );
 
   cy.get('button[id="login"]').should("contain", "Log Out");
+});
+```
+
+## Test Case 2
+
+## Description
+
+This test case verifies that a user can successfully log out,
+form inputs are cleared and login button text is changed to `Log In`.
+
+## Input data
+
+```json
+{
+  "username": "test123",
+  "password": "pwd"
+}
+```
+
+## Steps
+
+1. Visit the login page.
+2. Enter valid credentials.
+3. Click the Log In button.
+4. Click the Log Out button.
+5. Verify that form inputs are clear.
+6. Verify that login button text is `Log In`.
+
+## Expected result
+
+After completing the above steps, the test should pass, the user should be successfully logged out and form inputs should be cleared, login button contains `Log In` text.
+
+## Code
+
+```typescript
+it("should change button text and clear inputs, after successful log out", () => {
+  cy.login(username, password);
+
+  cy.get('button[id="login"]').click();
+
+  cy.get('button[id="login"]').should("contain", "Log In");
+
+  cy.get("input").should("contain", "");
 });
 ```
