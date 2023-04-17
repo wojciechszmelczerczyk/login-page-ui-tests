@@ -75,7 +75,7 @@ form inputs are cleared and login button text is changed to `Log In`.
 5. Verify that form inputs are clear.
 6. Verify that login button text is `Log In`.
 
-## #Expected result
+### Expected result
 
 After completing the above steps, the test should pass, the user should be successfully logged out and form inputs should be cleared, login button contains `Log In` text.
 
