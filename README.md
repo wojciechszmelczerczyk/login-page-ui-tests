@@ -16,10 +16,17 @@ Sample test cases for the [login form](http://uitestingplayground.com/sampleapp)
 
 ## Test cases
 
-|                      Test case                       |
-| :--------------------------------------------------: |
-|   [`Successful login`](./docs/login/successful.md)   |
-| [`Unsuccessful login`](./docs/login/unsuccessful.md) |
+|                      Test case                       |                    URL                     |
+| :--------------------------------------------------: | :----------------------------------------: |
+|   [`Successful login`](./docs/login/successful.md)   | `http://uitestingplayground.com/sampleapp` |
+| [`Unsuccessful login`](./docs/login/unsuccessful.md) | `http://uitestingplayground.com/sampleapp` |
+
+## Helper functions
+
+|                      Function                       |
+| :-------------------------------------------------: |
+| [`Login function`](./docs/custom/login-function.md) |
+|   [`Visit page hook`](./docs/hooks/visit-page.md)   |
 
 ## To run
 
