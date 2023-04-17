@@ -3,7 +3,7 @@
 ## Description
 
 This test case verifies that a user can successfully log in with valid credentials and
-successful hello message is being prompted.
+successful hello message is being prompted and login button text is changed to `Log Out`.
 
 ## Input data
 
@@ -19,16 +19,16 @@ successful hello message is being prompted.
 1. Visit the login page.
 2. Enter valid credentials.
 3. Click the Log In button.
-4. Verify that the successful "Welcome, user!" message is being prompted.
+4. Verify that the successful `Welcome, ${user}!` message is being prompted and login button text is `Log Out`.
 
 ## Expected result
 
-After completing the above steps, the test should pass and the user should be successfully logged in and successful log in message should be displayed.
+After completing the above steps, the test should pass and the user should be successfully logged in and successful log in message should be displayed, login button now contains `Log Out` text.
 
 ## Code
 
 ```typescript
-it("should prompt successful hello message, if provided credentials are correct", () => {
+it("should prompt successful hello message and change button text to Log Out, if provided credentials are correct", () => {
   const { username, password } = correctUser;
 
   cy.login(username, password);
@@ -37,5 +37,7 @@ it("should prompt successful hello message, if provided credentials are correct"
     "have.text",
     `Welcome, ${username}!`
   );
+
+  cy.get('button[id="login"]').should("contain", "Log Out");
 });
 ```

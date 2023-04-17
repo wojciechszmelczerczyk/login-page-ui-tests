@@ -18,7 +18,7 @@ This test case prevent user from successful log in, when credentials are invalid
 1. Visit the login page.
 2. Enter invalid credentials.
 3. Click the Log In button.
-4. Verify that the "Invalid username/password" validation error message is shown.
+4. Verify that the `Invalid username/password` validation error message is shown.
 
 ## Expected result
 
