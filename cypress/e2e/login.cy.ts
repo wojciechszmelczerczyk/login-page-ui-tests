@@ -3,9 +3,9 @@ import * as userCredentials from "../fixtures/credentials.json";
 const [correctUser, incorrectUser] = userCredentials;
 
 describe("Login Form", () => {
-  it("if provided user credentials are correct, prompt successful login message", () => {
-    cy.visit("http://uitestingplayground.com/sampleapp");
+  beforeEach(() => cy.visit("http://uitestingplayground.com/sampleapp"));
 
+  it("should prompt successful hello message, if provided credentials are correct", () => {
     const { username, password } = correctUser;
 
     cy.login(username, password);
@@ -15,9 +15,8 @@ describe("Login Form", () => {
       `Welcome, ${username}!`
     );
   });
-  it("if provided user credentials are incorrect, prompt error validation message", () => {
-    cy.visit("http://uitestingplayground.com/sampleapp");
 
+  it("should prompt error validation message, if provided credentials are incorrect", () => {
     const { username, password } = incorrectUser;
 
     cy.login(username, password);
