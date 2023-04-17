@@ -18,7 +18,7 @@ describe("Login Form", () => {
       cy.get('button[id="login"]').should("contain", "Log Out");
     });
 
-    it("should change button text and clear inputs, after successful log out", () => {
+    it("should change button text to Log In and clear inputs, after successful log out", () => {
       cy.login(username, password);
 
       cy.get('button[id="login"]').click();

@@ -37,8 +37,6 @@ After completing the above steps, the test should pass and the user should be su
 
 ```typescript
 it("should prompt successful hello message and change button text to Log Out, if provided credentials are correct", () => {
-  const { username, password } = correctUser;
-
   cy.login(username, password);
 
   cy.get('label[id="loginstatus"]').should(
@@ -82,7 +80,7 @@ After completing the above steps, the test should pass, the user should be succe
 ### Code
 
 ```typescript
-it("should change button text and clear inputs, after successful log out", () => {
+it("should change button text to Log In and clear inputs, after successful log out", () => {
   cy.login(username, password);
 
   cy.get('button[id="login"]').click();
