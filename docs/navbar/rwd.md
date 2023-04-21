@@ -30,10 +30,10 @@ After completing the above steps for `a` alternative case, hamburger menu should
 
 ### Steps
 
-1. Visit the login page.
-   2a. Adjust screen width below 991px, size in this case to IPhone 7 size.
-   2b. Adjust screen width above 991px, size in this case to Macbook 13 size.
-   3a. Navbar elements should not be visible.
+1. Visit the login page. <br/>
+   2a. Adjust screen width below 991px, size in this case to IPhone 7 size. <br/>
+   2b. Adjust screen width above 991px, size in this case to Macbook 13 size. <br/>
+   3a. Navbar elements should not be visible. <br/>
    3b. Navbar elements should be visible.
 
 ### Expected result
