@@ -22,6 +22,12 @@ Cypress.Commands.add("login", (username, password) => {
     cy.contains("Log In").click();
   }
 });
+
+Cypress.Commands.add("checkRedirect", (url: string) => {
+  cy.get(`a[href='${url}']`).click();
+
+  cy.url().should("be.equal", `http://uitestingplayground.com${url}`);
+});
 //
 //
 // -- This is a child command --
@@ -39,6 +45,7 @@ declare global {
   namespace Cypress {
     interface Chainable {
       login(username: string, password: string): Chainable<void>;
+      checkRedirect(url: string): Chainable<void>;
       //   drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       //   dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       //   visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
