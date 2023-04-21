@@ -10,7 +10,8 @@
 //
 //
 // -- This is a parent command --
-Cypress.Commands.add("login", (username: string, password: string) => {
+
+Cypress.Commands.add("login", (username, password) => {
   // if user provide some username and password data, type and submit
   if (username.length && password.length) {
     cy.get('[name="UserName"]').type(username);
@@ -37,7 +38,7 @@ Cypress.Commands.add("login", (username: string, password: string) => {
 declare global {
   namespace Cypress {
     interface Chainable {
-      login(email: string, password: string): Chainable<void>;
+      login(username: string, password: string): Chainable<void>;
       //   drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       //   dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       //   visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
