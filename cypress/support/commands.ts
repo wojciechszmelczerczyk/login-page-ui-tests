@@ -11,7 +11,9 @@
 //
 // -- This is a parent command --
 
-Cypress.Commands.add("login", (username, password) => {
+import { IScreenDimensions } from "../interfaces/IScreenDimensions";
+
+Cypress.Commands.add("login", (username: string, password: string) => {
   // if user provide some username and password data, type and submit
   if (username.length && password.length) {
     cy.get('[name="UserName"]').type(username);
@@ -31,25 +33,35 @@ Cypress.Commands.add("verifyUrlRedirect", (url: string) => {
   cy.url().should("be.equal", `http://uitestingplayground.com${url}`);
 });
 
-Cypress.Commands.add("checkHamburgerMenuVisibility", (device: string) => {
-  cy.viewport(device as any);
+Cypress.Commands.add(
+  "checkHamburgerMenuVisibility",
+  (device: IScreenDimensions) => {
+    const { width, height } = device;
 
-  cy.get("[data-target='#navbarSupportedContent'").should(
-    `${device === "macbook-13" ? "not.be.visible" : "be.visible"}`
-  );
-});
+    cy.viewport(width, height);
 
-Cypress.Commands.add("checkNavbarElementsVisibility", (deviceName: string) => {
-  cy.viewport(deviceName as any);
+    cy.get("[data-target='#navbarSupportedContent'").should(
+      `${width > 991 ? "not.be.visible" : "be.visible"}`
+    );
+  }
+);
 
-  cy.get("a[href='/home'").should(
-    `${deviceName !== "macbook-13" ? "not.be.visible" : "be.visible"}`
-  );
+Cypress.Commands.add(
+  "checkNavbarElementsVisibility",
+  (device: IScreenDimensions) => {
+    const { width, height } = device;
 
-  cy.get("a[href='/resources'").should(
-    `${deviceName !== "macbook-13" ? "not.be.visible" : "be.visible"}`
-  );
-});
+    cy.viewport(width, height);
+
+    cy.get("a[href='/home'").should(
+      `${width > 991 ? "be.visible" : "not.be.visible"}`
+    );
+
+    cy.get("a[href='/resources'").should(
+      `${width > 991 ? "be.visible" : "not.be.visible"}`
+    );
+  }
+);
 
 //
 //
@@ -69,8 +81,8 @@ declare global {
     interface Chainable {
       login(username: string, password: string): Chainable<void>;
       verifyUrlRedirect(url: string): Chainable<void>;
-      checkHamburgerMenuVisibility(deviceName: string): Chainable<void>;
-      checkNavbarElementsVisibility(deviceName: string): Chainable<void>;
+      checkHamburgerMenuVisibility(device: any): Chainable<void>;
+      checkNavbarElementsVisibility(device: any): Chainable<void>;
       //   drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       //   dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       //   visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>

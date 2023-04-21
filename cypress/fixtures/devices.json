@@ -1,0 +1,10 @@
+{
+    "iphone7": {
+        "width": 750,
+        "height": 1334
+    },
+    "macbook13": {
+        "width": 1280,
+        "height": 800
+    }
+}

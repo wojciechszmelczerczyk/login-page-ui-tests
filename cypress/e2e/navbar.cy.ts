@@ -1,5 +1,9 @@
 beforeEach(() => cy.visit("http://uitestingplayground.com/sampleapp"));
 
+import * as screenDimensions from "../fixtures/devices.json";
+
+const { iphone7, macbook13 } = screenDimensions;
+
 describe("Navbar", () => {
   describe("Redirect", () => {
     it("should redirect to main page when UITAP logo is clicked", () =>
@@ -15,21 +19,21 @@ describe("Navbar", () => {
   describe("Responsiveness", () => {
     context("Mobile", () => {
       it("hamburger menu should be visible on mobile size screen", () => {
-        cy.checkHamburgerMenuVisibility("iphone-7");
+        cy.checkHamburgerMenuVisibility(iphone7);
       });
 
       it("navbar home and resources elements should not be visible on mobile size screen", () => {
-        cy.checkNavbarElementsVisibility("iphone-7");
+        cy.checkNavbarElementsVisibility(iphone7);
       });
     });
 
     context("Laptop", () => {
       it("hamburger menu should not be visible on laptop size screen", () => {
-        cy.checkHamburgerMenuVisibility("macbook-13");
+        cy.checkHamburgerMenuVisibility(macbook13);
       });
 
       it("navbar home and resources elements should be visible on laptop size screen", () => {
-        cy.checkNavbarElementsVisibility("macbook-13");
+        cy.checkNavbarElementsVisibility(macbook13);
       });
     });
   });
