@@ -45,13 +45,13 @@ Test cases for the [Sample page](http://uitestingplayground.com/sampleapp).
 Clone repository.
 
 ```sh
-git clone https://github.com/wojciechszmelczerczyk/login-form-ui-tests.git
+git clone https://github.com/wojciechszmelczerczyk/login-page-ui-tests.git
 ```
 
 Navigate to project root folder.
 
 ```sh
-cd ./login-form-ui-tests
+cd ./login-page-ui-tests
 ```
 
 Install dependencies.
