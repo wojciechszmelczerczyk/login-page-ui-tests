@@ -2,14 +2,26 @@
 
 ## Table of contents:
 
+- [Constraints](#constraints)
 - [Login](#login)
 - [Logout](#logout)
+
+### Constraints
+
+Schema below represent correct user credentials.
+
+```json
+{
+  "username": "not null string",
+  "password": "pwd"
+}
+```
 
 ## Login
 
 ### Description
 
-This test case verifies that a user can successfully log in with valid credentials and
+This test case verifies that a user can successfully log in with valid credentials, then
 successful hello message is being prompted and login button text is changed to `Log Out`.
 
 ### Input data
