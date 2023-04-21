@@ -1,8 +1,8 @@
-# Login form test cases
+# Login page test cases
 
 ## Description
 
-Sample test cases for the [Sample page](http://uitestingplayground.com/sampleapp).
+Test cases for the [Sample page](http://uitestingplayground.com/sampleapp).
 
 ## Table of contents
 
