@@ -2,7 +2,7 @@
 
 ## Description
 
-Sample test cases for the [login form](http://uitestingplayground.com/sampleapp).
+Sample test cases for the [Sample page](http://uitestingplayground.com/sampleapp).
 
 ## Table of contents
 
@@ -16,17 +16,29 @@ Sample test cases for the [login form](http://uitestingplayground.com/sampleapp)
 
 ## Test cases
 
-|                      Test case                       |                                          URL                                           |
-| :--------------------------------------------------: | :------------------------------------------------------------------------------------: |
-|   [`Successful login`](./docs/login/successful.md)   | [`http://uitestingplayground.com/sampleapp`](http://uitestingplayground.com/sampleapp) |
-| [`Unsuccessful login`](./docs/login/unsuccessful.md) | [`http://uitestingplayground.com/sampleapp`](http://uitestingplayground.com/sampleapp) |
+### Login
 
-## Helper functions
+|                      Test case                       |
+| :--------------------------------------------------: |
+|   [`Successful login`](./docs/login/successful.md)   |
+| [`Unsuccessful login`](./docs/login/unsuccessful.md) |
 
-|                      Function                       |
-| :-------------------------------------------------: |
-| [`Login function`](./docs/custom/login-function.md) |
-|   [`Visit page hook`](./docs/hooks/visit-page.md)   |
+### Navbar
+
+|                  Test case                  |
+| :-----------------------------------------: |
+| [`Redirects`](./docs/navbar/urlRedirect.md) |
+|  [`Responsiveness`](./docs/navbar/rwd.md)   |
+
+### Helper functions
+
+|                             Function                              |
+| :---------------------------------------------------------------: |
+|        [`Login function`](./docs/custom/loginFunction.md)         |
+|          [`Visit page hook`](./docs/hooks/visit-page.md)          |
+|  [`Verify redirect`](./docs/custom/verifyUrlRedirectFunction.md)  |
+| [`Verify hamburger visibility`](./docs/custom/checkHamMenuVis.md) |
+|          [`Visit page hook`](./docs/hooks/visit-page.md)          |
 
 ## To run
 

@@ -1,8 +1,8 @@
-beforeEach(() => cy.visit("http://uitestingplayground.com/sampleapp"));
-
 import * as screenDimensions from "../fixtures/devices.json";
 
 const { iphone7, macbook13 } = screenDimensions;
+
+beforeEach(() => cy.visit("http://uitestingplayground.com/sampleapp"));
 
 describe("Navbar", () => {
   describe("Redirect", () => {
