@@ -7,6 +7,7 @@ beforeEach(() => cy.visit("http://uitestingplayground.com/sampleapp"));
 describe("Login Form", () => {
   describe("Successful login", () => {
     const { username, password } = correctUser;
+
     it("should prompt successful hello message and change button text to Log Out, if provided credentials are correct", () => {
       cy.login(username, password);
 
