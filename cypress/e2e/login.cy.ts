@@ -1,6 +1,6 @@
 import * as userCredentials from "../fixtures/credentials.json";
 
-const [correctUser, incorrectUser] = userCredentials;
+const [correctUser, incorrectUser, emptyUser] = userCredentials;
 
 beforeEach(() => cy.visit("http://uitestingplayground.com/sampleapp"));
 
@@ -32,6 +32,16 @@ describe("Login Form", () => {
   describe("Unsuccessful login", () => {
     it("should prompt error validation message, if provided credentials are incorrect", () => {
       const { username, password } = incorrectUser;
+
+      cy.login(username, password);
+
+      cy.get('label[id="loginstatus"]').should(
+        "have.text",
+        "Invalid username/password"
+      );
+    });
+    it("should prompt error validation message, if no credentials are provided", () => {
+      const { username, password } = emptyUser;
 
       cy.login(username, password);
 

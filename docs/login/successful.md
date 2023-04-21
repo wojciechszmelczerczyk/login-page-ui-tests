@@ -6,7 +6,7 @@
 - [Login](#login)
 - [Logout](#logout)
 
-### Constraints
+## Constraints
 
 Schema below represent correct user credentials.
 
