@@ -15,9 +15,9 @@ This tests cases check if redirects from `Login page` navbar works correctly i.e
 
 <b>Resource -> URL destination</b>
 
-UITAP logo -> `http://uitestingplayground.com/` <br/>
-Home element -> `http://uitestingplayground.com/home` <br/>
-Resources element -> `http://uitestingplayground.com/resources`
+UITAP logo -> [`http://uitestingplayground.com/`](http://uitestingplayground.com/) <br/>
+Home element -> [`http://uitestingplayground.com/home`](http://uitestingplayground.com/home) <br/>
+Resources element -> [`http://uitestingplayground.com/resources`](http://uitestingplayground.com/resources)
 
 ### Steps
 
