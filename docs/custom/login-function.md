@@ -12,6 +12,8 @@ Function which handle login process:
 
 ## Code
 
+Function check if user provided data, if so data is written to input fields. Then button is submitted. However, if user didn't provide any data, just submit button.
+
 ```typescript
 Cypress.Commands.add("login", (username: string, password: string) => {
   // if user provide some username and password data, type and submit
