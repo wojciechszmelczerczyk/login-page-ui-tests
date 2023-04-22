@@ -30,7 +30,7 @@ Cypress.Commands.add("login", (username: string, password: string) => {
 Cypress.Commands.add("verifyUrlRedirect", (url: string) => {
   cy.get(`a[href='${url}']`).click();
 
-  cy.url().should("be.equal", `http://uitestingplayground.com${url}`);
+  cy.url().should("be.equal", `${Cypress.env("base_url")}${url}`);
 });
 
 Cypress.Commands.add(
@@ -81,8 +81,8 @@ declare global {
     interface Chainable {
       login(username: string, password: string): Chainable<void>;
       verifyUrlRedirect(url: string): Chainable<void>;
-      checkHamburgerMenuVisibility(device: any): Chainable<void>;
-      checkNavbarElementsVisibility(device: any): Chainable<void>;
+      checkHamburgerMenuVisibility(device: IScreenDimensions): Chainable<void>;
+      checkNavbarElementsVisibility(device: IScreenDimensions): Chainable<void>;
       //   drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       //   dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
       //   visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>

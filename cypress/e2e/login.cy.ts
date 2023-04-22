@@ -2,7 +2,7 @@ import * as userCredentials from "../fixtures/credentials.json";
 
 const [correctUser, incorrectUser, emptyUser] = userCredentials;
 
-beforeEach(() => cy.visit("http://uitestingplayground.com/sampleapp"));
+beforeEach(() => cy.visit(Cypress.env("sample_app_url")));
 
 describe("Login Form", () => {
   describe("Successful login", () => {

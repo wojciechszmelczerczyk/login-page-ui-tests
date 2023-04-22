@@ -15,10 +15,8 @@
   "author": "Wojciech Szmelczerczyk <szmelczerczykwojciech@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "@types/cypress-dotenv": "^2.0.0",
     "@types/jest": "^29.5.0",
     "cypress": "^12.9.0",
-    "cypress-dotenv": "^2.0.0",
     "typescript": "^5.0.4"
   },
   "dependencies": {

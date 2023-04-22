@@ -2,7 +2,7 @@ import * as screenDimensions from "../fixtures/devices.json";
 
 const { iphone7, macbook13 } = screenDimensions;
 
-beforeEach(() => cy.visit("http://uitestingplayground.com/sampleapp"));
+beforeEach(() => cy.visit(Cypress.env("sample_app_url")));
 
 describe("Navbar", () => {
   describe("Redirect", () => {
