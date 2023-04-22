@@ -7,6 +7,7 @@ Test cases for the [Sample page](http://uitestingplayground.com/sampleapp).
 ## Table of contents
 
 - [Techstack](#techstack)
+- [Test cases](#test-cases)
 - [To run](#to-run)
 
 ## Techstack
